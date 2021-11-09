@@ -1,0 +1,32 @@
+
+.auth-wrapper{
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.container {
+  width:300px;
+  padding: 50px;
+  border: blue solid 2px;
+  border-radius: 5px;
+}
+.auth-text {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.auth-input {
+  display: flex;
+  flex-direction: column;
+}
+.auth-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.active {
+  color: red;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,9 @@
+
+:host {
+  max-width: 380px;
+}
+
+.film-header-image {
+  background-image: url('../../../assets/movie-icon.png');
+  background-size: cover;
+}

@@ -1,0 +1,21 @@
+.wrapper{
+    margin: 50px auto;
+    width: 500px;
+}
+
+.wrapper2{
+  margin: 50px auto;
+  width: 200px;
+}
+
+.mat-flat-button {
+  color: blue;
+}
+
+.wrapper3{
+  margin-top: 50px;
+  margin-bottom: -50px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 200px;
+}

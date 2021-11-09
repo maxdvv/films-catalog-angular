@@ -1,0 +1,40 @@
+<mat-card class="menu-card">
+
+  <mat-toolbar class="menu-toolbar">
+    <mat-toolbar-row>
+      <div>
+        <app-search-film (searchTermOut)="setSearchTerm($event)"></app-search-film>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+</mat-card>
+
+<mat-grid-list *ngIf="isLoading" cols="3" rowHeight="840px">
+  <mat-grid-tile></mat-grid-tile>
+  <mat-grid-tile>
+    <mat-spinner></mat-spinner>
+  </mat-grid-tile>
+  <mat-grid-tile></mat-grid-tile>
+</mat-grid-list>
+
+<mat-grid-list cols="3" rowHeight="840px" *ngIf="actorsData.length !== 0">
+  <mat-grid-tile colspan="1" *ngFor="let actor of actorsData">
+    <app-film-item [actor]="actor"></app-film-item>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<div class="main-container" *ngIf="actorsData.length !== 0">
+  <div class="fixer-container">
+    <button mat-raised-button color="primary" [disabled]="numLoadFilm > 19" (click)="setNumLoadFilm()">Загрузить еще</button>
+  </div>
+</div>
+
+<mat-grid-list cols="3" rowHeight="840px" *ngIf="actorsData.length === 0">
+  <mat-grid-tile></mat-grid-tile>
+  <mat-grid-tile>
+    Актеры не найдены
+  </mat-grid-tile>
+  <mat-grid-tile></mat-grid-tile>
+</mat-grid-list>
+

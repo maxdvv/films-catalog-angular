@@ -1,0 +1,39 @@
+.login-wrapper .login .login-group .btn {
+  margin-top: 2rem;
+}
+
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.container {
+  width: 200px;
+  padding: 50px;
+  border: blue solid 2px;
+  border-radius: 5px;
+}
+
+.auth-text {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.auth-input {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.auth-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.validation {
+  color: red;
+}
+
+/*# sourceMappingURL=login.component.css.map */

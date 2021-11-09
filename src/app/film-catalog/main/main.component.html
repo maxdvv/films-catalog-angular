@@ -1,0 +1,42 @@
+<div class="wrapper">
+  <h2>Вас приветсвует приложение о фильмах</h2>
+</div>
+
+<div class="wrapper2">
+  <h2>Фильмы</h2>
+</div>
+
+
+<mat-grid-list cols="3" rowHeight="840px" >
+  <mat-grid-tile colspan="1" *ngFor="let film of filmsData">
+    <app-film-item [film]="film" [isMain]="isMain" [favFilms]="favFilms"></app-film-item>
+  </mat-grid-tile>
+</mat-grid-list>
+<div class="wrapper2">
+  <a mat-flat-button href="/films-list">Cмотреть больше...</a>
+</div>
+
+
+<mat-grid-list *ngIf="isLoading" cols="3" rowHeight="340px">
+  <mat-grid-tile></mat-grid-tile>
+  <mat-grid-tile>
+    <mat-spinner></mat-spinner>
+  </mat-grid-tile>
+  <mat-grid-tile></mat-grid-tile>
+</mat-grid-list>
+
+<mat-divider></mat-divider>
+
+<div class="wrapper3">
+  <h2>Актеры</h2>
+</div>
+
+<mat-grid-list cols="3" rowHeight="840px" >
+  <mat-grid-tile colspan="1" *ngFor="let actor of actorsData">
+    <app-film-item [actor]="actor" [isMain]="isMain"></app-film-item>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<div class="wrapper2">
+  <a mat-flat-button href="/actors-list">Cмотреть больше...</a>
+</div>

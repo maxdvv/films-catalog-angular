@@ -1,0 +1,16 @@
+.example-icon {
+    padding: 0 5px;
+  }
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.button-active {
+  color: #24c589;
+}
+
+.acc-name {
+  padding-top: 10px;
+  padding-left: 20px;
+}

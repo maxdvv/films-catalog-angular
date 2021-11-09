@@ -1,0 +1,54 @@
+<div class="auth-wrapper">
+  <div class="container">
+    <form (ngSubmit)="login()" class="example-form" [formGroup]="form" >
+      <div class="auth-input">
+        <div class="auth-text">
+          Для работы с системой необходимо авторизоваться
+        </div>
+        <mat-error *ngIf="message">
+          {{message}}
+        </mat-error>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Логин</mat-label>
+          <input type="text"
+                 id="login"
+                 formControlName="login"
+                 matInput
+                 [(ngModel)]="credentials.username"
+          >
+        </mat-form-field>
+
+        <mat-error *ngIf="form?.get('login')?.touched && form?.get('login')?.invalid">
+          <small>Поле Логин не может быть пустым</small>
+        </mat-error>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Пароль</mat-label>
+          <input type="password"
+                 id="password"
+                 formControlName="password"
+                 matInput
+                 [(ngModel)]="credentials.password"
+          >
+        </mat-form-field>
+        <mat-error *ngIf="form?.get('password')?.touched && form?.get('password')?.invalid">
+          <small *ngIf="form.get('password')?.errors?.required">
+            Поле Пароль не может быть пустым
+          </small>
+          <small *ngIf="form.get('password')?.errors?.minlength">
+            Пароль должен быть не менее {{form.get('password')?.errors?.minlength.requiredLength}} символов.
+            Сейчас он {{form.get('password')?.errors?.minlength.actualLength}} символа(ов).
+          </small>
+        </mat-error>
+
+      </div>
+      <mat-error *ngIf="authService.error$ | async as error">
+        {{ error }}
+      </mat-error>
+      <div class="auth-button">
+        <button [disabled]="form?.invalid || isSubmitted" type="submit" mat-raised-button>Войти</button>
+        <button (click)="goToRegistration()" mat-raised-button color="primary">Регистрация</button>
+      </div>
+    </form>
+  </div>
+</div>

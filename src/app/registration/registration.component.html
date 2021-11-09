@@ -1,0 +1,56 @@
+<div>
+<div class="auth-wrapper">
+  <div class="container">
+    <form (ngSubmit)="submitForm()" #form="ngForm" class="example-form">
+      <div class="auth-input">
+        <div class="auth-text">
+          Регистрация нового пользователя
+        </div>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Логин</mat-label>
+          <input type="text"
+                 matInput
+                 id="login_username"
+                 name="login"
+                 ngModel
+                 required
+                 #login="ngModel"
+          >
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input type="email"
+                 matInput
+                 id="email"
+                 name="email"
+                 ngModel
+                 required
+                 email
+                 #email="ngModel"
+          >
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Пароль</mat-label>
+          <input type="password"
+                 matInput
+                 id="login_password"
+                 name="password"
+                 ngModel
+                 required
+                 minlength="6"
+                 #password="ngModel"
+          >
+        </mat-form-field>
+
+      </div>
+      <div class="auth-button">
+        <button type="submit" mat-raised-button>Регистрация пользователя</button>
+        <button (click)="goToLogin()" mat-raised-button color="primary">Войти</button>
+      </div>
+    </form>
+  </div>
+</div>
+</div>
