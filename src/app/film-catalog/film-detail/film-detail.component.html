@@ -28,7 +28,27 @@
     </mat-card>
 
     </mat-grid-tile>
-  <mat-grid-tile></mat-grid-tile>
+  <mat-grid-tile>
+
+  </mat-grid-tile>
 </mat-grid-list>
+<h2>Смотреть трейлеры</h2>
 
+<mat-grid-list cols="3" rowHeight="400px">
+  <mat-grid-tile>
+    <!--    <iframe id="player1" type="text/html" width="640" height="360"-->
+    <!--            src="http://www.youtube.com/embed/sXoSILzgFug?enablejsapi=1"-->
+    <!--            frameborder="2"></iframe>-->
 
+    <a href="http://www.youtube.com/embed/{{video[0]}}">http://www.youtube.com/embed/{{video[0]}}</a>
+
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <a href="http://www.youtube.com/embed/{{video[1]}}">http://www.youtube.com/embed/{{video[1]}}</a>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <a href="http://www.youtube.com/embed/{{video[2]}}">http://www.youtube.com/embed/{{video[2]}}</a>
+  </mat-grid-tile>
+</mat-grid-list>

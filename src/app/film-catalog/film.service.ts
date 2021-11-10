@@ -18,7 +18,7 @@ export class FilmService {
 
   imgPath: string = 'https://image.tmdb.org/t/p'
   //midImgPath: string = `${this.imgPath}/w500`
-  // smallImgPath: string = `${this.imgPath}/w185`
+  smallImgPath: string = `${this.imgPath}/w185`
   // bigBackPath: string = `${this.imgPath}/w1280`
   // midBackPath: string = `${this.imgPath}/w780`
   // smallBackPath: string = `${this.imgPath}/w300`
@@ -118,12 +118,15 @@ export class FilmService {
   //https://developers.themoviedb.org/3/movies/get-movie-videos
   //https://api.themoviedb.org/3/movie/{movie_id}/videos?api_key=<<api_key>>&language=en-US
 
-  getMovieVideo() {
-
+  getMovieVideo(filmId: number) {
+    return this.http.get(`${this.apiUrl}/movie/${filmId}/videos?api_key=${this.apiKey}`)
   }
 
   // Связанные фильмы для актера
   // https://developers.themoviedb.org/3/people/get-popular-people
   // results -> known_for -> id film
 
+  getActorsRelatedFilm() {
+
+  }
 }

@@ -1,6 +1,6 @@
-# Homework3
+# Movies catalog app is make with Angular
 
-Movies catalog app is make with Angular. 
+
 
 ### themoviedb API
 * https://developers.themoviedb.org/3/account/get-account-details

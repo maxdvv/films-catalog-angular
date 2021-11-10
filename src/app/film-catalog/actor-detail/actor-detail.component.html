@@ -1,29 +1,43 @@
-<mat-grid-list cols="3" rowHeight="1500px">
-  <mat-grid-tile>
-    <button [routerLink]="['/actors-list']"
-            mat-stroked-button
-    >
-      Назад
-    </button>
-  </mat-grid-tile>
+<mat-grid-list cols="1" rowHeight="700px">
+
 
   <mat-grid-tile>
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>{{actor.name}}</mat-card-title>
-        <mat-card-subtitle></mat-card-subtitle>
-        <mat-card-subtitle><b>Популярность: {{actor.popularity | number:'1.0-0'}}</b></mat-card-subtitle>
-        <mat-card-subtitle><b>Место рождения: {{actor.place_of_birth}}</b></mat-card-subtitle>
-        <mat-card-subtitle><b>Дата рождения: {{actor.birthday}}</b></mat-card-subtitle>
-      </mat-card-header>
-      <img mat-card-image src="{{midImgURL}}{{actor.profile_path}}" alt="{{actor.name}}">
+    <mat-card class="actor-card">
       <mat-card-content>
         <p>
+          <img class="left-img" src="{{midImgURL}}{{actor.profile_path}}" alt="{{actor.name}}">
+          <button [routerLink]="['/actors-list']" mat-stroked-button>Назад</button>
+          <mat-card-subtitle></mat-card-subtitle>
+          <mat-card-title>{{actor.name}}</mat-card-title>
+          <mat-card-subtitle></mat-card-subtitle>
+          <mat-card-subtitle><b>Популярность: {{actor.popularity | number:'1.0-0'}}</b></mat-card-subtitle>
+          <mat-card-subtitle><b>Место рождения: {{actor.place_of_birth}}</b></mat-card-subtitle>
+          <mat-card-subtitle><b>Дата рождения: {{actor.birthday}}</b></mat-card-subtitle>
+          <mat-card-subtitle><b>Биография</b></mat-card-subtitle>
           {{actor.biography}}
         </p>
       </mat-card-content>
     </mat-card>
-
   </mat-grid-tile>
-  <mat-grid-tile></mat-grid-tile>
+</mat-grid-list>
+
+<h2>Фильмы с участием {{actor.name}}</h2>
+
+<mat-grid-list cols="3" rowHeight="1000px">
+<mat-grid-tile *ngFor="let film of relatedFilms">
+  <mat-card *ngIf="film.media_type === 'movie'" class="img-card">
+    <mat-card-header>
+      <mat-card-title>{{film.title}}</mat-card-title>
+      <mat-card-subtitle></mat-card-subtitle>
+      <mat-card-subtitle><b>Дата релиза: {{film.release_date}}</b></mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{midImgURL}}{{film.poster_path}}" alt="{{film.title}}">
+    <mat-card-content>
+      <p>
+        {{film.overview}}
+      </p>
+    </mat-card-content>
+  </mat-card>
+
+</mat-grid-tile>
 </mat-grid-list>
